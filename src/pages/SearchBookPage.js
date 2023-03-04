@@ -5,6 +5,8 @@ import SearchSelect from '../components/SearchSelect'
 import Table from '../components/Table'
 
 export default function SearchBookPage() {
+
+
     return (
         <div style={{
             display: 'flex',
