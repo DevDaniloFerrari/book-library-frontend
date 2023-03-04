@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SearchButton from '../components/SearchButton'
 import SearchInput from '../components/SearchInput'
 import SearchSelect from '../components/SearchSelect'
 import Table from '../components/Table'
 
 export default function SearchBookPage() {
-
+    const [books, setBooks] = useState()
 
     return (
         <div style={{
@@ -24,9 +24,9 @@ export default function SearchBookPage() {
             }}>
                 <SearchSelect />
                 <SearchInput />
-                <SearchButton />
+                <SearchButton setBooks={setBooks} />
             </div>
-            <Table />
+            <Table books={books}/>
         </div>
     )
 }

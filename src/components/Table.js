@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Table() {
+export default function Table(params) {
     return (
         <table>
             <thead>
@@ -15,15 +15,19 @@ export default function Table() {
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>test</td>
-                    <td>test</td>
-                    <td>test</td>
-                    <td>test</td>
-                    <td>test</td>
-                    <td>test</td>
-                    <td>test</td>
-                </tr>
+                {params.books?.map(book => {
+                    return (
+                        <tr key={book.id}>
+                            <td>{book.title}</td>
+                            <td>{book.publisher}</td>
+                            <td>{book.authors}</td>
+                            <td>{book.type}</td>
+                            <td>{book.isbn}</td>
+                            <td>{book.category}</td>
+                            <td>{book.availableCopies}</td>
+                        </tr>
+                    )
+                })}
             </tbody>
         </table>
     )

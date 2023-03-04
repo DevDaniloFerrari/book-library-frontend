@@ -1,9 +1,34 @@
 {
   "books": [
-      {
-          "id": 1,
-          "title": "book 1",
-          "author": "test"
-      }
+    {
+      "id": 1,
+      "title": "book 1",
+      "publisher": "book 1",
+      "authors": "book 1",
+      "type": "book 1",
+      "isbn": "book 1",
+      "category": "book 1",
+      "availableCopies": "book 1"
+    },
+    {
+      "id": 2,
+      "title": "book 2",
+      "publisher": "book 2",
+      "authors": "book 2",
+      "type": "book 2",
+      "isbn": "book 2",
+      "category": "book 2",
+      "availableCopies": "book 2"
+    },
+    {
+      "id": 3,
+      "title": "book 3",
+      "publisher": "book 3",
+      "authors": "book 3",
+      "type": "book 3",
+      "isbn": "book 3",
+      "category": "book 3",
+      "availableCopies": "book 3"
+    }
   ]
 }

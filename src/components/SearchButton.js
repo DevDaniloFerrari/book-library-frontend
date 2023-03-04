@@ -1,11 +1,12 @@
 import React from 'react'
 import bookApi from '../service/book-api'
 
-export default function SearchButton() {
+export default function SearchButton(params) {
+    const { setBooks } = params
 
     const getBooks = () => {
         bookApi.getBooks().then(response => {
-            console.log(response.data)
+            setBooks(response.data)
         })
     }
 
