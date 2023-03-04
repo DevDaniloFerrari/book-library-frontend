@@ -6,11 +6,25 @@ import Table from '../components/Table'
 
 export default function SearchBookPage() {
     return (
-        <>
-            <SearchSelect />
-            <SearchInput />
-            <SearchButton />
+        <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 100
+        }}>
+            <div style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 20,
+                border: '2px solid black',
+                borderRadius: '20px',
+                margin: '50px',
+                padding: '10px'
+            }}>
+                <SearchSelect />
+                <SearchInput />
+                <SearchButton />
+            </div>
             <Table />
-        </>
+        </div>
     )
 }
