@@ -1,7 +1,14 @@
 import React from 'react'
 
 export default function SearchInput(params) {
-    const { value, setValue } = params
+    const { value, setValue, getBooks } = params
+
+    const onChangeInput = (value) => {
+        setValue(value)
+
+        if (value == '')
+            getBooks()
+    }
 
     return (
         <div style={{
@@ -9,7 +16,7 @@ export default function SearchInput(params) {
             justifyContent: 'space-between',
         }}>
             <text>Search Value:</text>
-            <input value={value} onChange={event => setValue(event.target.value)}></input>
+            <input value={value} onChange={event => onChangeInput(event.target.value)}></input>
         </div>
     )
 }

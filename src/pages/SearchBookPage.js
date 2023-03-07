@@ -1,13 +1,30 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import SearchButton from '../components/SearchButton'
 import SearchInput from '../components/SearchInput'
 import SearchSelect from '../components/SearchSelect'
 import Table from '../components/Table'
+import bookApi from '../service/book-api'
 
 export default function SearchBookPage() {
     const [books, setBooks] = useState()
     const [value, setValue] = useState()
-    const [property, setProperty] = useState()
+    const [property, setProperty] = useState('Title')
+
+    const search = () => {
+        bookApi.getBooksFiltered(property, value).then(response => {
+            setBooks(response.data)
+        })
+    }
+
+    useEffect(() => {
+        getBooks()
+    }, [])
+
+    const getBooks = () => {
+        bookApi.getBooks().then(response => {
+            setBooks(response.data)
+        })
+    }
 
     return (
         <div style={{
@@ -24,11 +41,11 @@ export default function SearchBookPage() {
                 margin: '50px',
                 padding: '10px'
             }}>
-                <SearchSelect setProperty={setProperty}/>
-                <SearchInput value={value} setValue={setValue}/>
-                <SearchButton setBooks={setBooks} property={property} value={value} />
+                <SearchSelect setProperty={setProperty} setValue={setValue} />
+                <SearchInput value={value} setValue={setValue} getBooks={getBooks} />
+                <SearchButton search={search} />
             </div>
-            <Table books={books}/>
+            <Table books={books} />
         </div>
     )
 }

@@ -1,7 +1,12 @@
 import React from 'react'
 
 export default function SearchSelect(params) {
-  const { setProperty } = params
+  const { setProperty, setValue } = params
+
+  const onChangeProperty = (value) => {
+    setProperty(value)
+    setValue('')
+  }
 
   return (
     <div style={{
@@ -9,7 +14,7 @@ export default function SearchSelect(params) {
       justifyContent: 'space-between',
     }}>
       <text>Search By:</text>
-      <select onChange={event => setProperty(event.target.value)}>
+      <select onChange={event => onChangeProperty(event.target.value)}>
         <option value={'Title'}>Book Title</option>
         <option value={'Author'}>Authors</option>
         <option value={'Type'}>Type</option>

@@ -1,18 +1,11 @@
 import React from 'react'
-import bookApi from '../service/book-api'
 
 export default function SearchButton(params) {
-    const { setBooks, property, value } = params
-
-    const getBooks = () => {
-        bookApi.getBooksFiltered(property, value).then(response => {
-            setBooks(response.data)
-        })
-    }
+    const { search } = params
 
     return (
         <div>
-            <button onClick={getBooks}>Search</button>
+            <button onClick={search}>Search</button>
         </div>
     )
 }
