@@ -6,6 +6,8 @@ import Table from '../components/Table'
 
 export default function SearchBookPage() {
     const [books, setBooks] = useState()
+    const [value, setValue] = useState()
+    const [property, setProperty] = useState()
 
     return (
         <div style={{
@@ -22,9 +24,9 @@ export default function SearchBookPage() {
                 margin: '50px',
                 padding: '10px'
             }}>
-                <SearchSelect />
-                <SearchInput />
-                <SearchButton setBooks={setBooks} />
+                <SearchSelect setProperty={setProperty}/>
+                <SearchInput value={value} setValue={setValue}/>
+                <SearchButton setBooks={setBooks} property={property} value={value} />
             </div>
             <Table books={books}/>
         </div>

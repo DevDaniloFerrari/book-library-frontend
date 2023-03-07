@@ -1,19 +1,20 @@
 import React from 'react'
 
-export default function SearchSelect() {
+export default function SearchSelect(params) {
+  const { setProperty } = params
+
   return (
     <div style={{
       display: 'flex',
       justifyContent: 'space-between',
     }}>
       <text>Search By:</text>
-      <select>
-        <option>Book Title</option>
-        <option>Publisher</option>
-        <option>Authors</option>
-        <option>Type</option>
-        <option>ISBN</option>
-        <option>Category</option>
+      <select onChange={event => setProperty(event.target.value)}>
+        <option value={'Title'}>Book Title</option>
+        <option value={'Author'}>Authors</option>
+        <option value={'Type'}>Type</option>
+        <option value={'Isbn'}>ISBN</option>
+        <option value={'Category'}>Category</option>
       </select>
     </div>
   )
