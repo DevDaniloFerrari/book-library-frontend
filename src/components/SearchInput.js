@@ -1,4 +1,5 @@
 import React from 'react'
+import Form from 'react-bootstrap/Form';
 
 export default function SearchInput(params) {
     const { value, setValue, getBooks } = params
@@ -6,17 +7,18 @@ export default function SearchInput(params) {
     const onChangeInput = (value) => {
         setValue(value)
 
-        if (value == '')
+        if (value === '')
             getBooks()
     }
 
     return (
-        <div style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-        }}>
-            <text>Search Value:</text>
-            <input value={value} onChange={event => onChangeInput(event.target.value)}></input>
-        </div>
+        <Form.Group className="mb-3">
+            <Form.Label id="serach-value">Search Value:</Form.Label>
+            <Form.Control
+                aria-describedby="serach-value"
+                value={value}
+                onChange={event => onChangeInput(event.target.value)}
+            />
+        </Form.Group>
     )
 }

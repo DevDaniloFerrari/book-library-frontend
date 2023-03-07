@@ -1,8 +1,9 @@
 import React from 'react'
+import Table from 'react-bootstrap/Table';
 
-export default function Table(params) {
+export default function BookTable(params) {
     return (
-        <table>
+        <Table className='text-center' size='sm' striped bordered hover>
             <thead>
                 <tr>
                     <th>Book Title</th>
@@ -27,6 +28,6 @@ export default function Table(params) {
                     )
                 })}
             </tbody>
-        </table>
+        </Table>
     )
 }
