@@ -15,7 +15,7 @@ export default function SearchSelect(params) {
       <Form.Label>Search By:</Form.Label>
       <Form.Select size="sm" onChange={event => onChangeProperty(event.target.value)}>
         <option value={'Title'}>Book Title</option>
-        <option value={'Author'}>Authors</option>
+        <option value={'FirstName'}>Authors</option>
         <option value={'Type'}>Type</option>
         <option value={'Isbn'}>ISBN</option>
         <option value={'Category'}>Category</option>
