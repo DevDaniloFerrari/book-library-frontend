@@ -46,7 +46,7 @@ export default function SearchBookPage() {
             <Card className='m-2'>
                 <Card.Body>
                     <Form>
-                        <SearchSelect setProperty={setProperty} setValue={setValue} />
+                        <SearchSelect setProperty={setProperty} setValue={setValue} getBooks={getBooks}/>
                         <SearchInput value={value} setValue={setValue} getBooks={getBooks} />
                     </Form>
                     <SearchButton search={search} />

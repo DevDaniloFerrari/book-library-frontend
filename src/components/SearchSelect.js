@@ -2,11 +2,12 @@ import React from 'react'
 import Form from 'react-bootstrap/Form';
 
 export default function SearchSelect(params) {
-  const { setProperty, setValue } = params
+  const { setProperty, setValue, getBooks } = params
 
   const onChangeProperty = (value) => {
     setProperty(value)
     setValue('')
+    getBooks()
   }
 
   return (
